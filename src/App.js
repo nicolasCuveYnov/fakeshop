@@ -11,8 +11,8 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" exact element={<ProductListing/>}/>
-          <Route path="/product/:productId" exact element={<ProductDetail/>}/>
+          <Route path="/" element={<ProductListing/>}/>
+          <Route path="/product/:productId" element={<ProductDetail/>}/>
         </Routes>
       </Router>
     </div>
