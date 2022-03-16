@@ -35,11 +35,11 @@ const ProductListing = () =>{
                 <div className="item">
                     <p>Filter by category</p>
                 </div>
-                <button className="ui button" onClick={()=>fetchProducts()}>All</button>
-                <button className="ui button" onClick={()=>fetchProductsByCat("jewelery")}>Jewelery</button>            
-                <button className="ui button" onClick={()=>fetchProductsByCat("electronics")}>Electronics</button>
-                <button className="ui button" onClick={()=>fetchProductsByCat("men's clothing")}>Men's clothing</button>
-                <button className="ui button" onClick={()=>fetchProductsByCat("women's clothing")}>Women's clothing</button>
+                <button name="all-filter" className="ui button" onClick={()=>fetchProducts()}>All</button>
+                <button name="jewelery-filter" className="ui button" onClick={()=>fetchProductsByCat("jewelery")}>Jewelery</button>            
+                <button name="electronics-filter" className="ui button" onClick={()=>fetchProductsByCat("electronics")}>Electronics</button>
+                <button name="men-filter" className="ui button" onClick={()=>fetchProductsByCat("men's clothing")}>Men's clothing</button>
+                <button name="women-filter" className="ui button" onClick={()=>fetchProductsByCat("women's clothing")}>Women's clothing</button>
             </div>
             <div className="ui five column doubling grid">
                 <ProductComponent/>
