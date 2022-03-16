@@ -17,13 +17,34 @@ const ProductListing = () =>{
             })
             dispatch(setProducts(response.data))
     }
+    const fetchProductsByCat = async (cat) =>{
+        const response = await axios
+            .get("https://fakestoreapi.com/products/category/"+cat)
+            .catch((err)=>{
+                console.log(err)
+            })
+            dispatch(setProducts(response.data))
+    }
     useEffect(()=>{
         fetchProducts()
     },[])
+
     return(
-        <div className="ui grid">
-            <ProductComponent/>
-        </div>
+        <>
+            <div className="ui stackable menu">
+                <div className="item">
+                    <p>Filter by category</p>
+                </div>
+                <button className="ui button" onClick={()=>fetchProducts()}>All</button>
+                <button className="ui button" onClick={()=>fetchProductsByCat("jewelery")}>Jewelery</button>            
+                <button className="ui button" onClick={()=>fetchProductsByCat("electronics")}>Electronics</button>
+                <button className="ui button" onClick={()=>fetchProductsByCat("men's clothing")}>Men's clothing</button>
+                <button className="ui button" onClick={()=>fetchProductsByCat("women's clothing")}>Women's clothing</button>
+            </div>
+            <div className="ui five column doubling grid">
+                <ProductComponent/>
+            </div>
+        </>
     )
 }
 
