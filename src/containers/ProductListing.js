@@ -6,7 +6,7 @@ import axios from 'axios'
 
 
 const ProductListing = () =>{
-    const products = useSelector((state)=> state)
+    const products = useSelector((state)=> state.allProducts.products)
     const dispatch = useDispatch()
 
     const fetchProducts = async () =>{
